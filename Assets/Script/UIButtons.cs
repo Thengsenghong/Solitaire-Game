@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIButtons : MonoBehaviour
 {
     public GameObject highScorePanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,20 +23,23 @@ public class UIButtons : MonoBehaviour
     {
         highScorePanel.SetActive(false);
         ResetScene();
+       
     }
     public void ResetScene()
     {
-        // find all the cards and remove them
-        UpdateSprite[] cards = FindObjectsOfType<UpdateSprite>();
-        foreach(UpdateSprite card in cards)
-        {
-            Destroy(card.gameObject);
-        }
-        // clear the top values
-        ClearTopValues();
+        /*   // find all the cards and remove them
+           UpdateSprite[] cards = FindObjectsOfType<UpdateSprite>();
+           foreach(UpdateSprite card in cards)
+           {
+               Destroy(card.gameObject);
+           }
+           // clear the top values
+           ClearTopValues();
 
-        // deal new cards
-        FindObjectOfType<Solitaire>().PlayCards();
+           // deal new cards
+           FindObjectOfType<Solitaire>().PlayCards();*/
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
     void ClearTopValues()
     {
@@ -47,5 +52,16 @@ public class UIButtons : MonoBehaviour
                 selectable.value = 0;
             }
         }
+    }
+    public void ClearCard()
+    {
+        //clear card
+        UpdateSprite[] cards = FindObjectsOfType<UpdateSprite>();
+        foreach (UpdateSprite card in cards)
+        {
+            Destroy(card.gameObject);
+        }
+        //  clear card form top
+        ClearTopValues();
     }
 }

@@ -19,6 +19,7 @@ public class Solitaire : MonoBehaviour
 
 
 
+
     public static string[] suits = new string[] { "C", "D", "H", "S" };
     public static string[] values = new string[] { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
     public List<string>[] bottoms;
@@ -46,7 +47,7 @@ public class Solitaire : MonoBehaviour
     void Start()
     {
         bottoms = new List<string>[] { bottom0, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6 };
-        PlayCards();
+      
     }
 
     // Update is called once per frame

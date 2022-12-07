@@ -47,7 +47,7 @@ public class Solitaire : MonoBehaviour
     void Start()
     {
         bottoms = new List<string>[] { bottom0, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6 };
-      
+        PlayCards();
     }
 
     // Update is called once per frame

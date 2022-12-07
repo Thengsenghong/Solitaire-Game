@@ -38,7 +38,7 @@ public class UIButtons : MonoBehaviour
 
            // deal new cards
            FindObjectOfType<Solitaire>().PlayCards();*/
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
         
     }
     void ClearTopValues()
@@ -63,5 +63,13 @@ public class UIButtons : MonoBehaviour
         }
         //  clear card form top
         ClearTopValues();
+    }
+    public void GotoPlayScene()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void GotoHomeScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }

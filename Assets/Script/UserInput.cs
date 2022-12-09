@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class UserInput : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class UserInput : MonoBehaviour
     private float doubleClickTime = 0.3f;
     private int clickCount = 0;
     private UpdateSprite updateSprite;
+    public Text scoreTxt;
+    public Text scoretxtAtEndScene;
+    public int score;
 
 
     // Start is called before the first frame update
@@ -139,6 +143,7 @@ public class UserInput : MonoBehaviour
                 if (Stackable(selected))
                 {
                     Stack(selected);
+                   
                 }
                 else
                 {
@@ -273,6 +278,7 @@ public class UserInput : MonoBehaviour
         {
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = 0;
             solitaire.topPos[s1.row].GetComponent<Selectable>().suit = null;
+            score -= 10;
         }
         else if (s1.top) // keeps track of the current value of the top decks as a card has been removed
         {
@@ -291,6 +297,9 @@ public class UserInput : MonoBehaviour
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = s1.value;
             solitaire.topPos[s1.row].GetComponent<Selectable>().suit = s1.suit;
             s1.top = true;
+            score += 10;
+            scoreTxt.text = "SCORE= "+score;     // scoring
+            scoretxtAtEndScene.text = "SCORE " + score;
         }
         else
         {

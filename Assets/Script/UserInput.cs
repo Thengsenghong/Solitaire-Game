@@ -10,6 +10,7 @@ public class UserInput : MonoBehaviour
     private float timer;
     private float doubleClickTime = 0.3f;
     private int clickCount = 0;
+    private UpdateSprite updateSprite;
 
 
     // Start is called before the first frame update
@@ -109,6 +110,7 @@ public class UserInput : MonoBehaviour
                     {
                         // attempt auto stack
                         AutoStack(selected);
+                      
                     }
                 }
                 else
@@ -300,7 +302,7 @@ public class UserInput : MonoBehaviour
 
     }
 
-    bool Blocked(GameObject selected)
+    public bool Blocked(GameObject selected)
     {
         Selectable s2 = selected.GetComponent<Selectable>();
         if (s2.inDeckPile == true)
@@ -323,6 +325,7 @@ public class UserInput : MonoBehaviour
             }
             else
             {
+                
                 return true;
             }
         }

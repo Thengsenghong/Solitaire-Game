@@ -153,22 +153,22 @@ public class Solitaire : MonoBehaviour
         }
    
     }
-    public void SortDeckIntoTrips()
+    public void SortDeckIntoTrips()     //when want to show random card 3 a time change 1 into 3
     {
-        trips = deck.Count / 3;
-        tripsRemainder = deck.Count % 3;
+        trips = deck.Count / 1;
+        tripsRemainder = deck.Count % 1;
         deckTrips.Clear();
 
         int modifier = 0;
         for (int i = 0; i < trips; i++)
         {
             List<string> myTrips = new List<string>();
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < 1; j++)
             {
                 myTrips.Add(deck[j + modifier]);
             }
             deckTrips.Add(myTrips);
-            modifier = modifier + 3;
+            modifier = modifier + 1;
         }
         if (tripsRemainder != 0)
         {

@@ -58,4 +58,5 @@ public class UpdateSprite : MonoBehaviour
             spriteRenderer.color = Color.white;
         }
     }
+
 }

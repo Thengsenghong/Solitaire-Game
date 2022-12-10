@@ -43,6 +43,7 @@ public class ScoreKeeper : MonoBehaviour
     }
     void Win()
     {
+        AudioManager.Instance.PlaySFX("Win");
         highScorePanel.SetActive(true);
         print("YOu have won!");
     }

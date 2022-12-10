@@ -85,6 +85,7 @@ public class UserInput : MonoBehaviour
         // deck click actions
         print("Clicked on deck");
         solitaire.DealFromDeck();
+        AudioManager.Instance.PlaySFX("Shuffle");
         slot1 = this.gameObject;
 
     }
@@ -98,6 +99,7 @@ public class UserInput : MonoBehaviour
             if (!Blocked(selected)) // if the card clicked on is not blocked
             {
                 // flip it over
+                AudioManager.Instance.PlaySFX("Open");
                 selected.GetComponent<Selectable>().faceUp = true;
                 slot1 = this.gameObject;
             }

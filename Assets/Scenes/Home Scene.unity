@@ -449,7 +449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 4a53d460e7119f443b7c5d7d0f65784e, type: 3}
+  m_Texture: {fileID: 2800000, guid: fef2e5cf4cde0eb4a8f313ee49627169, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 93638218ad5fedb4183f4aecf89be2b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ed1f096945f9924e8fa18117aa21bc0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -897,7 +897,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 37f4e60c58af2074aaae635942a5fc15, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44066586baf8fee40a5e976ce982d4fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5b3177d67b837a2479caaeff8a107f4b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7201ce47a335dde4a81d2d20c7c56bec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1767,7 +1767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5f0fae396ce80f5469fe711977307730, type: 3}
+  m_Texture: {fileID: 2800000, guid: be69783022557ea41ac8aefdd13ea340, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2195,7 +2195,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 22003c632312ce248971227f4fb4cba2, type: 3}
+  m_Texture: {fileID: 2800000, guid: a0fe984f6e03d2d4e881d9d912bd8334, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2700,7 +2700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 209d25896f830ec4d9cd3aa26b6f5127, type: 3}
+  m_Texture: {fileID: 2800000, guid: ad8c0f0bd7e5e304192bd891b168931a, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

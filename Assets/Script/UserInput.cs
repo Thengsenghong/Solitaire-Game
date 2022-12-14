@@ -84,8 +84,8 @@ public class UserInput : MonoBehaviour
     {
         // deck click actions
         print("Clicked on deck");
+        AudioManager.Instance.PlaySFX("Open");
         solitaire.DealFromDeck();
-        AudioManager.Instance.PlaySFX("Shuffle");
         slot1 = this.gameObject;
 
     }

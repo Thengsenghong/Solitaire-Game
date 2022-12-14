@@ -32,7 +32,7 @@ public class ScoreKeeper : MonoBehaviour
             i += topstack.value;
 
         }
-        if (i >= 52)
+        if (i >= 2)
         {
             return true;
         }

@@ -43,6 +43,7 @@ public class UserInput : MonoBehaviour
         }
 
         GetMouseClick();
+        
     }
 
     void GetMouseClick()
@@ -312,7 +313,7 @@ public class UserInput : MonoBehaviour
         slot1 = this.gameObject;
 
     }
-
+  
     public bool Blocked(GameObject selected)
     {
         Selectable s2 = selected.GetComponent<Selectable>();
@@ -320,7 +321,9 @@ public class UserInput : MonoBehaviour
         {
             if (s2.name == solitaire.tripsOnDisplay.Last()) // if it is the last trip it is not blocked
             {
+               
                 return false;
+
             }
             else
             {
@@ -333,6 +336,7 @@ public class UserInput : MonoBehaviour
             if (s2.name == solitaire.bottoms[s2.row].Last()) // check if it is the bottom card
             {
                 return false;
+
             }
             else
             {

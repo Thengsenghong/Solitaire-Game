@@ -54,7 +54,7 @@ public class Solitaire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+      
     }
 
     //handle start of game

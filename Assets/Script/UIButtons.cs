@@ -11,35 +11,35 @@ public class UIButtons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void PlayAgain()
     {
         highScorePanel.SetActive(false);
         ResetScene();
-       
+
     }
     public void ResetScene()
     {
-        /*   // find all the cards and remove them
-           UpdateSprite[] cards = FindObjectsOfType<UpdateSprite>();
-           foreach(UpdateSprite card in cards)
-           {
-               Destroy(card.gameObject);
-           }
-           // clear the top values
-           ClearTopValues();
+  /*      // find all the cards and remove them
+        UpdateSprite[] cards = FindObjectsOfType<UpdateSprite>();
+        foreach (UpdateSprite card in cards)
+        {
+            Destroy(card.gameObject);
+        }
+        // clear the top values
+        ClearTopValues();
 
-           // deal new cards
-           FindObjectOfType<Solitaire>().PlayCards();*/
-        SceneManager.LoadScene(1);
-        
+        // deal new cards
+        FindObjectOfType<Solitaire>().PlayCards();*/
+         SceneManager.LoadScene(1);
+
     }
     void ClearTopValues()
     {
@@ -72,4 +72,5 @@ public class UIButtons : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
 }

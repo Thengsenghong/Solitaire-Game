@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Solitaire : MonoBehaviour
 {
@@ -15,7 +16,10 @@ public class Solitaire : MonoBehaviour
     public GameObject[] bottomPos;
     public GameObject[] topPos;
     public Color selectedColor;
-
+    private int minute = 0;
+    private float time = 0;
+    [SerializeField]
+    private Text minutetxt, secondtxt;
 
 
 
@@ -49,12 +53,23 @@ public class Solitaire : MonoBehaviour
         AudioManager.Instance.PlaySFX("Shuffle");
         bottoms = new List<string>[] { bottom0, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6 };
         PlayCards();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-      
+        time += Time.deltaTime;
+       
+        if (time > 59)
+        {
+            minute++;
+            minutetxt.text = minute.ToString("00")+" : ";
+            time = 0;
+        }
+         secondtxt.text = Mathf.Round(time).ToString("00");
+        
+     
     }
 
     //handle start of game
@@ -139,7 +154,7 @@ public class Solitaire : MonoBehaviour
         }
         discardPile.Clear();
 
-          
+
     }
 
     void SolitaireSort()
@@ -152,7 +167,7 @@ public class Solitaire : MonoBehaviour
                 deck.RemoveAt(deck.Count - 1);
             }
         }
-   
+
     }
     public void SortDeckIntoTrips()     //when want to show random card 3 a time change 1 into 3
     {

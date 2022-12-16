@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEditor;
+using Unity.VisualScripting;
 
 public class UserInput : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class UserInput : MonoBehaviour
     public Text scoreTxt;
     public Text scoretxtAtEndScene;
     public int score;
+  
 
 
     // Start is called before the first frame update
@@ -79,6 +82,7 @@ public class UserInput : MonoBehaviour
                 }
             }
         }
+
     }
 
     void Deck()
@@ -97,12 +101,14 @@ public class UserInput : MonoBehaviour
 
         if (!selected.GetComponent<Selectable>().faceUp) // if the card clicked on is facedown
         {
+            
             if (!Blocked(selected)) // if the card clicked on is not blocked
             {
                 // flip it over
                 AudioManager.Instance.PlaySFX("Open");
                 selected.GetComponent<Selectable>().faceUp = true;
                 slot1 = this.gameObject;
+                Debug.Log("HelloWorld");
             }
 
         }
@@ -117,7 +123,7 @@ public class UserInput : MonoBehaviour
                     {
                         // attempt auto stack
                         AutoStack(selected);
-                      
+
                     }
                 }
                 else
@@ -146,12 +152,13 @@ public class UserInput : MonoBehaviour
                 if (Stackable(selected))
                 {
                     Stack(selected);
-                   
+
                 }
                 else
                 {
                     // select the new card
                     slot1 = selected;
+
                 }
             }
 
@@ -163,9 +170,8 @@ public class UserInput : MonoBehaviour
                     AutoStack(selected);
                 }
             }
-
-
         }
+        
     }
     void Top(GameObject selected)
     {
@@ -248,7 +254,13 @@ public class UserInput : MonoBehaviour
                     else
                     {
                         print("Stackable");
+                        //audiomanager.instance.playsfx("open");
+                        //selected.getcomponent<selectable>().faceup = true;
+                        //slot1 = this.gameobject;
+                        //debug.log("helloworld");
+                       
                         return true;
+
                     }
                 }
             }
@@ -256,6 +268,8 @@ public class UserInput : MonoBehaviour
         return false;
     }
 
+
+    public Selectable selectable;
     void Stack(GameObject selected)
     {
         // if on top of king or empty bottom stack the cards in place
@@ -290,6 +304,17 @@ public class UserInput : MonoBehaviour
         else // removes the card string from the appropriate bottom list
         {
             solitaire.bottoms[s1.row].Remove(slot1.name);
+
+            selected.GetComponent<Selectable>().faceUp = true;
+           
+            
+            //Tver nov ng
+            //solitaire.GetComponent<Selectable>().faceUp = true;
+            //selected.GetComponent<Selectable>().faceUp = true;
+            slot1 = this.gameObject;
+            selectable.faceUp = true;
+            //Debug.Log("HelloWorld");
+            Debug.Log("jjddsjjf");
         }
 
         s1.inDeckPile = false; // you cannot add cards to the trips pile so this is always fine
@@ -301,7 +326,7 @@ public class UserInput : MonoBehaviour
             solitaire.topPos[s1.row].GetComponent<Selectable>().suit = s1.suit;
             s1.top = true;
             score += 10;
-            scoreTxt.text = "SCORE= "+score;     // scoring
+            scoreTxt.text = "SCORE= " + score;     // scoring
             scoretxtAtEndScene.text = "SCORE " + score;
         }
         else
@@ -313,7 +338,7 @@ public class UserInput : MonoBehaviour
         slot1 = this.gameObject;
 
     }
-  
+   
     public bool Blocked(GameObject selected)
     {
         Selectable s2 = selected.GetComponent<Selectable>();
@@ -321,9 +346,7 @@ public class UserInput : MonoBehaviour
         {
             if (s2.name == solitaire.tripsOnDisplay.Last()) // if it is the last trip it is not blocked
             {
-               
                 return false;
-
             }
             else
             {
@@ -336,11 +359,9 @@ public class UserInput : MonoBehaviour
             if (s2.name == solitaire.bottoms[s2.row].Last()) // check if it is the bottom card
             {
                 return false;
-
             }
             else
             {
-                
                 return true;
             }
         }

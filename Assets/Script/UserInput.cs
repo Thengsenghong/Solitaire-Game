@@ -133,6 +133,23 @@ public class UserInput : MonoBehaviour
             }
 
         }
+        if (!selected.GetComponent<Selectable>().faceUp)
+        {
+            if (!Blocked(selected))
+            {
+                if (slot1 == selected)
+                {
+                    if (DoubleClick())
+                    {
+                        AutoStack(selected);
+                    }
+                }
+                else
+                {
+                    slot1 = selected;
+                }
+            }
+        }
         else
         {
 
@@ -304,17 +321,16 @@ public class UserInput : MonoBehaviour
         else // removes the card string from the appropriate bottom list
         {
             solitaire.bottoms[s1.row].Remove(slot1.name);
+            slot1 = this.gameObject;
+            //selected.GetComponent<Selectable>().faceUp = true;
 
-            selected.GetComponent<Selectable>().faceUp = true;
-           
-            
+
             //Tver nov ng
             //solitaire.GetComponent<Selectable>().faceUp = true;
             //selected.GetComponent<Selectable>().faceUp = true;
-            slot1 = this.gameObject;
-            selectable.faceUp = true;
+            //selectable.faceUp = true;
             //Debug.Log("HelloWorld");
-            Debug.Log("jjddsjjf");
+            
         }
 
         s1.inDeckPile = false; // you cannot add cards to the trips pile so this is always fine

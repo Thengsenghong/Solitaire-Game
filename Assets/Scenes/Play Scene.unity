@@ -2386,6 +2386,7 @@ GameObject:
   - component: {fileID: 522805893}
   - component: {fileID: 522805895}
   - component: {fileID: 522805894}
+  - component: {fileID: 522805898}
   - component: {fileID: 522805896}
   m_Layer: 0
   m_Name: bottom0
@@ -2531,6 +2532,20 @@ RectTransform:
   m_AnchoredPosition: {x: -510.6, y: 0.9999912}
   m_SizeDelta: {x: 4.07, y: 6.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &522805898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522805891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8d5bcf99029074db3e9972d6ef4405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: []
+  GlupCard: {fileID: 522805891}
 --- !u!1 &557608131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2619,6 +2634,7 @@ GameObject:
   - component: {fileID: 567359653}
   - component: {fileID: 567359655}
   - component: {fileID: 567359654}
+  - component: {fileID: 567359658}
   - component: {fileID: 567359656}
   m_Layer: 0
   m_Name: bottom5
@@ -2764,6 +2780,20 @@ RectTransform:
   m_AnchoredPosition: {x: 392.3, y: 2.2499924}
   m_SizeDelta: {x: 4.07, y: 6.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &567359658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567359651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8d5bcf99029074db3e9972d6ef4405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: []
+  GlupCard: {fileID: 567359651}
 --- !u!1 &578904938
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,6 +3656,7 @@ GameObject:
   - component: {fileID: 764875506}
   - component: {fileID: 764875508}
   - component: {fileID: 764875507}
+  - component: {fileID: 764875511}
   - component: {fileID: 764875509}
   m_Layer: 0
   m_Name: bottom3
@@ -3771,6 +3802,20 @@ RectTransform:
   m_AnchoredPosition: {x: 28, y: 1}
   m_SizeDelta: {x: 4.07, y: 6.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &764875511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764875504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8d5bcf99029074db3e9972d6ef4405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: []
+  GlupCard: {fileID: 764875504}
 --- !u!1 &788632424
 GameObject:
   m_ObjectHideFlags: 0
@@ -4722,6 +4767,7 @@ GameObject:
   - component: {fileID: 1057988080}
   - component: {fileID: 1057988082}
   - component: {fileID: 1057988081}
+  - component: {fileID: 1057988085}
   - component: {fileID: 1057988083}
   m_Layer: 0
   m_Name: bottom2
@@ -4867,6 +4913,20 @@ RectTransform:
   m_AnchoredPosition: {x: -155.6, y: 2.2499924}
   m_SizeDelta: {x: 4.07, y: 6.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1057988085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057988078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8d5bcf99029074db3e9972d6ef4405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: []
+  GlupCard: {fileID: 1057988078}
 --- !u!1 &1174440879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5416,6 +5476,7 @@ GameObject:
   - component: {fileID: 1228028089}
   - component: {fileID: 1228028091}
   - component: {fileID: 1228028090}
+  - component: {fileID: 1228028094}
   - component: {fileID: 1228028092}
   m_Layer: 0
   m_Name: bottom1
@@ -5561,6 +5622,20 @@ RectTransform:
   m_AnchoredPosition: {x: -331.6, y: 0.9999912}
   m_SizeDelta: {x: 4.07, y: 6.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1228028094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228028087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8d5bcf99029074db3e9972d6ef4405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: []
+  GlupCard: {fileID: 1228028087}
 --- !u!1 &1269947511
 GameObject:
   m_ObjectHideFlags: 0
@@ -6953,6 +7028,7 @@ GameObject:
   - component: {fileID: 1660035484}
   - component: {fileID: 1660035486}
   - component: {fileID: 1660035485}
+  - component: {fileID: 1660035489}
   - component: {fileID: 1660035487}
   m_Layer: 0
   m_Name: bottom6
@@ -7098,6 +7174,20 @@ RectTransform:
   m_AnchoredPosition: {x: 577.30005, y: 2.2499926}
   m_SizeDelta: {x: 4.07, y: 6.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1660035489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660035482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8d5bcf99029074db3e9972d6ef4405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: []
+  GlupCard: {fileID: 1660035482}
 --- !u!1 &1844903243
 GameObject:
   m_ObjectHideFlags: 0
@@ -8164,6 +8254,7 @@ GameObject:
   - component: {fileID: 2038321341}
   - component: {fileID: 2038321343}
   - component: {fileID: 2038321342}
+  - component: {fileID: 2038321346}
   - component: {fileID: 2038321344}
   m_Layer: 0
   m_Name: bottom4
@@ -8309,6 +8400,20 @@ RectTransform:
   m_AnchoredPosition: {x: 213.1, y: -1.1500089}
   m_SizeDelta: {x: 4.07, y: 6.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2038321346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038321339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8d5bcf99029074db3e9972d6ef4405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: []
+  GlupCard: {fileID: 2038321339}
 --- !u!1 &2070363154
 GameObject:
   m_ObjectHideFlags: 0

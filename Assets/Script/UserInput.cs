@@ -13,7 +13,6 @@ public class UserInput : MonoBehaviour
     private float timer;
     private float doubleClickTime = 0.3f;
     private int clickCount = 0;
-    private UpdateSprite updateSprite;
     public Text scoreTxt;
     public Text scoretxtAtEndScene;
     public int score;
@@ -286,7 +285,6 @@ public class UserInput : MonoBehaviour
     }
 
 
-    public Selectable selectable;
     void Stack(GameObject selected)
     {
         // if on top of king or empty bottom stack the cards in place

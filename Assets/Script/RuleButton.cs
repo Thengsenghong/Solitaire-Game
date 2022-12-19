@@ -17,7 +17,7 @@ public class RuleButton : MonoBehaviour
 
     public void Open()
     {
-        transform.LeanScale(Vector2.one, 0.8f);
+        transform.LeanScale(Vector2.one, 0.5f);
     }
     public void Close()
     {

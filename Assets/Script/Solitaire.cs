@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ public class Solitaire : MonoBehaviour
     public GameObject[] bottomPos;
     public GameObject[] topPos;
     public Color selectedColor;
+    public GameObject EmptyDeck;
   
 
 
@@ -56,9 +58,19 @@ public class Solitaire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
-        
-     
+        if (deck.Count <= 1)
+        {
+            Debug.Log("empty");
+            EmptyDeck.SetActive(true);
+            deckButton.LeanColor(new Color32(2, 2, 2, 2), 0.1f);
+
+
+        }
+        else
+        {
+            EmptyDeck.SetActive(false);
+            deckButton.LeanColor(new Color32(255, 255, 255, 255), 0.1f);
+        }
     }
 
     //handle start of game
@@ -139,6 +151,7 @@ public class Solitaire : MonoBehaviour
             if (deck.Contains(card))
             {
                 deck.Remove(card);
+
             }
         }
         discardPile.Clear();

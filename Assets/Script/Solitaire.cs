@@ -16,10 +16,7 @@ public class Solitaire : MonoBehaviour
     public GameObject[] bottomPos;
     public GameObject[] topPos;
     public Color selectedColor;
-    private int minute = 0;
-    private float time = 0;
-    [SerializeField]
-    private Text minutetxt, secondtxt;
+  
 
 
 
@@ -59,15 +56,7 @@ public class Solitaire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-       
-        if (time > 59)
-        {
-            minute++;
-            minutetxt.text = minute.ToString("00")+" : ";
-            time = 0;
-        }
-         secondtxt.text = Mathf.Round(time).ToString("00");
+     
         
      
     }

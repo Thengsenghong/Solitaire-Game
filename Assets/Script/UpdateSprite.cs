@@ -10,11 +10,7 @@ public class UpdateSprite : MonoBehaviour
     private Selectable selectable;
     private Solitaire solitaire;
     private UserInput userInput;
-   
-
-
-
-
+    private bool coroutineAllowed, facedUp;
 
     // Start is called before the first frame update
     void Start()
@@ -35,28 +31,51 @@ public class UpdateSprite : MonoBehaviour
         }
         spriteRenderer = GetComponent<SpriteRenderer>();
         selectable = GetComponent<Selectable>();
+        coroutineAllowed = true;
+        facedUp = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(selectable.faceUp == true)
+        if (selectable.faceUp == true)
         {
-            spriteRenderer.sprite = cardFace;
-        }   
+            if (coroutineAllowed)
+            {
+                if(spriteRenderer.sprite == cardBack) { StartCoroutine(RotateCard()); }
+            }
+          //  spriteRenderer.sprite = cardFace;
+        }
         else
         {
             spriteRenderer.sprite = cardBack;
         }
         if (userInput.slot1)
-        if (name == userInput.slot1.name)
-        {
-            spriteRenderer.color = solitaire.selectedColor;
-        }
-        else
-        {
-            spriteRenderer.color = Color.white;
-        }
+            if (name == userInput.slot1.name)
+            {
+                spriteRenderer.color = solitaire.selectedColor;
+            }
+            else
+            {
+                spriteRenderer.color = Color.white;
+            }
     }
+    private IEnumerator RotateCard()
+    {
+        coroutineAllowed = false;
+        if (!facedUp)
+        {
+            for (float i = 180f; i <= 360f; i += 10f) /*(float i = 360f; i >= 180f; i -= 10f)*/
+            {
+                transform.rotation = Quaternion.Euler(0f, i, 0f);
+                if (i == 270f)
+                {
+                    spriteRenderer.sprite = cardFace;
+                }
+                yield return new WaitForSeconds(0.01f);
+            }
+        }
 
+         coroutineAllowed = true;
+    }
 }

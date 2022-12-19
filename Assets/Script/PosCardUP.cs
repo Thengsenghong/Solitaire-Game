@@ -6,6 +6,9 @@ public class PosCardUP : MonoBehaviour
 {
     public List<Transform> card = new List<Transform>();
     public GameObject GlupCard;
+    public UpdateSprite updateSprite;
+
+  
     void Update()
     {
         card.Clear();
@@ -29,4 +32,5 @@ public class PosCardUP : MonoBehaviour
             }
         }
     }
+
 }

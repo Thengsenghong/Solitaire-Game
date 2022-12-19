@@ -883,7 +883,7 @@ MonoBehaviour:
   scoreTxt: {fileID: 271447782}
   scoretxtAtEndScene: {fileID: 613640326}
   score: 0
-  selectable: {fileID: 285209170}
+  selectable: {fileID: 0}
 --- !u!114 &187411671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1511,56 +1511,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282829352}
   m_CullTransparentMesh: 1
---- !u!1 &285209169
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 285209171}
-  - component: {fileID: 285209170}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &285209170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285209169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6f62487fc6ea1d41822d169dba9a9f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  top: 0
-  suit: 
-  value: 0
-  row: 0
-  faceUp: 0
-  inDeckPile: 0
---- !u!4 &285209171
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285209169}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &290193492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,6 +2498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: []
   GlupCard: {fileID: 522805891}
+  updateSprite: {fileID: 0}
 --- !u!1 &557608131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,6 +2747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: []
   GlupCard: {fileID: 567359651}
+  updateSprite: {fileID: 0}
 --- !u!1 &578904938
 GameObject:
   m_ObjectHideFlags: 0
@@ -3818,6 +3770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: []
   GlupCard: {fileID: 764875504}
+  updateSprite: {fileID: 0}
 --- !u!1 &788632424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,7 +3926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &867672984
 Transform:
   m_ObjectHideFlags: 0
@@ -4929,6 +4882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: []
   GlupCard: {fileID: 1057988078}
+  updateSprite: {fileID: 0}
 --- !u!1 &1174440879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5638,6 +5592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: []
   GlupCard: {fileID: 1228028087}
+  updateSprite: {fileID: 0}
 --- !u!1 &1269947511
 GameObject:
   m_ObjectHideFlags: 0
@@ -7433,6 +7388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: []
   GlupCard: {fileID: 1660035482}
+  updateSprite: {fileID: 0}
 --- !u!1 &1844903243
 GameObject:
   m_ObjectHideFlags: 0
@@ -8659,6 +8615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: []
   GlupCard: {fileID: 2038321339}
+  updateSprite: {fileID: 0}
 --- !u!1 &2070363154
 GameObject:
   m_ObjectHideFlags: 0

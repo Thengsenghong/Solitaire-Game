@@ -104,7 +104,6 @@ public class UserInput : MonoBehaviour
             if (!Blocked(selected)) // if the card clicked on is not blocked
             {
                 // flip it over
-                AudioManager.Instance.PlaySFX("Open");
                 selected.GetComponent<Selectable>().faceUp = true;
                 slot1 = this.gameObject;
                 Debug.Log("HelloWorld");
@@ -315,6 +314,7 @@ public class UserInput : MonoBehaviour
         else if (s1.top) // keeps track of the current value of the top decks as a card has been removed
         {
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = s1.value - 1;
+            score -= 10;
         }
         else // removes the card string from the appropriate bottom list
         {

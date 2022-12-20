@@ -10,7 +10,6 @@ public class Selectable : MonoBehaviour
     public int row;
     public bool faceUp = false;
     public bool inDeckPile = false;
-
     private string valueString;
     // Start is called before the first frame update
     void Start()

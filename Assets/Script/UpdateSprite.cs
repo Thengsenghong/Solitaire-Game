@@ -18,7 +18,6 @@ public class UpdateSprite : MonoBehaviour
         List<string> deck = Solitaire.GenerateDeck();
         solitaire = FindObjectOfType<Solitaire>();
         userInput = FindObjectOfType<UserInput>();
-
         int i = 0;
         foreach (string card in deck)
         {
@@ -42,9 +41,13 @@ public class UpdateSprite : MonoBehaviour
         {
             if (coroutineAllowed)
             {
-                if(spriteRenderer.sprite == cardBack) { StartCoroutine(RotateCard()); }
+                if (spriteRenderer.sprite == cardBack)
+                {
+                    AudioManager.Instance.PlaySFX("Open");
+                    StartCoroutine(RotateCard());
+                }
             }
-          //  spriteRenderer.sprite = cardFace;
+            //  spriteRenderer.sprite = cardFace;
         }
         else
         {
@@ -70,12 +73,13 @@ public class UpdateSprite : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, i, 0f);
                 if (i == 270f)
                 {
+                   
                     spriteRenderer.sprite = cardFace;
                 }
                 yield return new WaitForSeconds(0.01f);
             }
         }
 
-         coroutineAllowed = true;
+        coroutineAllowed = true;
     }
 }

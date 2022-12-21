@@ -43,7 +43,9 @@ public class UserInput : MonoBehaviour
             timer = 0;
             clickCount = 0;
         }
-
+        if (score < 0) score = 0;
+        scoreTxt.text = "SCORE= " + score;     // scoring
+        scoretxtAtEndScene.text = "SCORE " + score;
         GetMouseClick();
         
     }
@@ -310,11 +312,13 @@ public class UserInput : MonoBehaviour
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = 0;
             solitaire.topPos[s1.row].GetComponent<Selectable>().suit = null;
             score -= 10;
+           
         }
         else if (s1.top) // keeps track of the current value of the top decks as a card has been removed
         {
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = s1.value - 1;
-            score -= 10;
+            //score -= 10;
+            if (solitaire.topPos[s1.row].GetComponent<Selectable>().value < s1.value) {score -= 15;}   
         }
         else // removes the card string from the appropriate bottom list
         {
@@ -340,8 +344,15 @@ public class UserInput : MonoBehaviour
             solitaire.topPos[s1.row].GetComponent<Selectable>().suit = s1.suit;
             s1.top = true;
             score += 10;
-            scoreTxt.text = "SCORE= " + score;     // scoring
-            scoretxtAtEndScene.text = "SCORE " + score;
+            if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
+            {
+                score += 50;
+            }
+            if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
+            {
+                score += 500;
+            }
+
         }
         else
         {

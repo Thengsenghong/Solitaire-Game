@@ -43,7 +43,7 @@ public class UpdateSprite : MonoBehaviour
             {
                 if (spriteRenderer.sprite == cardBack)
                 {
-                    AudioManager.Instance.PlaySFX("Open");
+                  /*  AudioManager.Instance.PlaySFX("Open");*/
                     StartCoroutine(RotateCard());
                 }
             }

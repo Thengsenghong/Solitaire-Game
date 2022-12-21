@@ -17,8 +17,9 @@ public class Solitaire : MonoBehaviour
     public GameObject[] bottomPos;
     public GameObject[] topPos;
     public Color selectedColor;
+    public GameObject ReloadCard;
     public GameObject EmptyDeck;
-  
+
 
 
 
@@ -52,25 +53,37 @@ public class Solitaire : MonoBehaviour
         AudioManager.Instance.PlaySFX("Shuffle");
         bottoms = new List<string>[] { bottom0, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6 };
         PlayCards();
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (deck.Count <= 1)
+    /*    if (deck.Count == 1 && discardPile.Count == 0)
         {
-            Debug.Log("empty");
-            EmptyDeck.SetActive(true);
+            Debug.Log("hahahah");
+            ReloadCard.SetActive(false);
             deckButton.LeanColor(new Color32(2, 2, 2, 2), 0.1f);
-
-
+            EmptyDeck.SetActive(true);
         }
-        else
+        else*/ if (deck.Count > 1)
         {
-            EmptyDeck.SetActive(false);
+            ReloadCard.SetActive(false);
             deckButton.LeanColor(new Color32(255, 255, 255, 255), 0.1f);
         }
+        else if (deck.Count == 1)
+        {
+            ReloadCard.SetActive(true);
+            deckButton.LeanColor(new Color32(2, 2, 2, 2), 0.1f);
+        }
+
+        if (deck.Count < 1)
+        {
+            /*   ReloadCard.SetActive(true);*/
+            deckButton.LeanColor(new Color32(2, 2, 2, 2), 0.1f);
+            EmptyDeck.SetActive(true);
+        }
+
     }
 
     //handle start of game

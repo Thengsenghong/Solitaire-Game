@@ -5,21 +5,22 @@ using UnityEngine;
 
 public class PlayerData
 {
-    public string name;
+
     public float score;
     public float minute;
-
-    public PlayerData(string name, float score, float minute)
+    public string name;
+    public PlayerData( float score, float minute, string name)
     {
-        this.name = name;
+   
         this.score = score;
         this.minute = minute;
+        this.name = name;
     }
-  
-  /*  public override string ToString()
+
+    public override string ToString()
     {
-        return $"{name}, {score}, {minute}";
-    }*/
+        return $"{score}, {minute},{name}";
+    }
 
 }
 

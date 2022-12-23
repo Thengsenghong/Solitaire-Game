@@ -18,7 +18,14 @@ public class JSONSaving : MonoBehaviour
 
     private void CreatePlayerData()
     {
-        playerData = new PlayerData("Trey", 500, 20);
+    
+        playerData = new PlayerData(11,44,"wfc");
+      
+      
+      /*  playerData = new PlayerData[2];
+        playerData[0] = new PlayerData(11, 22, "ss");
+        playerData[1] = new PlayerData(12, 33, "sw");*/
+
     }
 
     private void SetPaths()
@@ -35,22 +42,27 @@ public class JSONSaving : MonoBehaviour
 
     public void SaveData()
     {
-        string savePath = path;
+        string savePath = persistenPath;
 
         Debug.Log("Saving Data at" + savePath);
         string json = JsonUtility.ToJson(playerData);
         Debug.Log(json);
-
-        using StreamWriter writer = new StreamWriter(savePath);
-        writer.Write(json);
+              using StreamWriter writer = new StreamWriter(savePath);
+            writer.Write(json);
+      /*  for (int i = 0; i < playerData.Length; i++)
+        {
+         
+        }*/
     }
 
     public void LoadData()
     {
-        using StreamReader reader = new StreamReader(path);
+        using StreamReader reader = new StreamReader(persistenPath);
         string json = reader.ReadToEnd();
-
-        PlayerData data = JsonUtility.FromJson<PlayerData>(json);
-        Debug.Log(data.ToString());
+          PlayerData data = JsonUtility.FromJson<PlayerData>(json);
+            Debug.Log(data.ToString());
+     /*   for (int i = 0; i < playerData.Length; i++)
+        {  
+        }*/
     }
 }

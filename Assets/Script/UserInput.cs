@@ -293,7 +293,7 @@ public class UserInput : MonoBehaviour
 
         Selectable s1 = slot1.GetComponent<Selectable>();
         Selectable s2 = selected.GetComponent<Selectable>();
-        float yOffset = 0.3f;
+        float yOffset = 0.4f;
 
         if (s2.top || (!s2.top && s1.value == 13))
         {

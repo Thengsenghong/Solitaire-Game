@@ -756,6 +756,12 @@ MonoBehaviour:
   scoreTxt: {fileID: 271447782}
   scoretxtAtEndScene: {fileID: 613640326}
   score: 0
+  minute: 0
+  time: 0
+  minutetxt: {fileID: 1361373670}
+  secondtxt: {fileID: 270855319}
+  minutetxtEndScene: {fileID: 1448356143}
+  secondtxtEndScene: {fileID: 270855319}
 --- !u!114 &187411671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,10 +933,6 @@ MonoBehaviour:
   - {fileID: 665250971}
   - {fileID: 1844903248}
   highScorePanel: {fileID: 1292534570}
-  minutetxt: {fileID: 1361373670}
-  secondtxt: {fileID: 270855319}
-  minutetxtEndScene: {fileID: 1448356143}
-  secondtxtEndScene: {fileID: 1295820612}
 --- !u!1 &211009719
 GameObject:
   m_ObjectHideFlags: 0
@@ -4593,6 +4595,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1292534571}
         m_TargetAssemblyTypeName: UIButtons, Assembly-CSharp
         m_MethodName: GotoHomeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 187411670}
+        m_TargetAssemblyTypeName: UserInput, Assembly-CSharp
+        m_MethodName: AddScoreButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

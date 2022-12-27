@@ -5,18 +5,28 @@ using System.Linq;
 using UnityEngine.UI;
 using UnityEditor;
 using Unity.VisualScripting;
+using System.Net.Http;
+using static GetScoreAndShowScore;
+using static GetScoreAndShowScore.HttpClientHelper;
 
 public class UserInput : MonoBehaviour
 {
     public GameObject slot1;
     private Solitaire solitaire;
+    private ScoreKeeper scoreKeeper;
     private float timer;
     private float doubleClickTime = 0.3f;
     private int clickCount = 0;
     public Text scoreTxt;
     public Text scoretxtAtEndScene;
-    public int score;
-  
+    public int score=0;
+    public int minute = 0;
+    public float time = 0;
+    [SerializeField]
+    public Text minutetxt, secondtxt;
+    [SerializeField]
+    private Text minutetxtEndScene, secondtxtEndScene;
+
 
 
     // Start is called before the first frame update
@@ -29,6 +39,19 @@ public class UserInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
+
+        if (time > 59)
+        {
+            minute++;
+            minutetxt.text = minute.ToString("00") + " : ";
+            minutetxtEndScene.text = minute.ToString("00") + " : ";
+            time = 0;
+
+        }
+        secondtxt.text = Mathf.Round(time).ToString("00");
+        secondtxtEndScene.text = Mathf.Round(time).ToString("00");
+
         if (clickCount == 1)
         {
             timer += Time.deltaTime;
@@ -228,8 +251,7 @@ public class UserInput : MonoBehaviour
     {
         Selectable s1 = slot1.GetComponent<Selectable>();
         Selectable s2 = selected.GetComponent<Selectable>();
-        // compare them to see if they stack
-
+        // compare them to see if they stack  
         if (!s2.inDeckPile)
         {
             if (s2.top) // if in the top pile must stack suited Ace to King
@@ -282,6 +304,7 @@ public class UserInput : MonoBehaviour
                 }
             }
         }
+        GameObject Card = FindObjectOfType<GameObject>();
         return false;
     }
 
@@ -324,14 +347,8 @@ public class UserInput : MonoBehaviour
         {
             solitaire.bottoms[s1.row].Remove(slot1.name);
             slot1 = this.gameObject;
-            //selected.GetComponent<Selectable>().faceUp = true;
+           
 
-
-            //Tver nov ng
-            //solitaire.GetComponent<Selectable>().faceUp = true;
-            //selected.GetComponent<Selectable>().faceUp = true;
-            //selectable.faceUp = true;
-            //Debug.Log("HelloWorld");
             
         }
 
@@ -473,6 +490,25 @@ public class UserInput : MonoBehaviour
         {
             return false;
         }
+    }
+    public async void AddScoreButtonClick()
+    {
+        int Score = score;
+        float second = time;
+        int Minute =minute;
+        /*     if ((Score == null || minute == null || second == null))
+             {
+                 Debug.Log("Invalid");
+                 return;
+             }*/
+        var userInfo = await HttpClientHelper.AddScore(new UserInfo(0,Score, Minute, second));
+        //scoreTxt.text = Score.ToString();
+        //scoreKeeper.minutetxt.text = minute.ToString();
+        //scoreKeeper.secondtxt.text = second.ToString();
+    }
+    public async void ShowHighScoreButton()
+    {
+
     }
 
 }

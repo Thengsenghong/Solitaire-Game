@@ -8,6 +8,8 @@ using Unity.VisualScripting;
 using System.Net.Http;
 using static GetScoreAndShowScore;
 using static GetScoreAndShowScore.HttpClientHelper;
+using System.Threading.Tasks;
+
 
 public class UserInput : MonoBehaviour
 {
@@ -19,7 +21,7 @@ public class UserInput : MonoBehaviour
     private int clickCount = 0;
     public Text scoreTxt;
     public Text scoretxtAtEndScene;
-    public int score=0;
+    public int score = 0;
     public int minute = 0;
     public float time = 0;
     [SerializeField]
@@ -70,7 +72,7 @@ public class UserInput : MonoBehaviour
         scoreTxt.text = "SCORE= " + score;     // scoring
         scoretxtAtEndScene.text = "SCORE " + score;
         GetMouseClick();
-        
+
     }
 
     void GetMouseClick()
@@ -125,7 +127,7 @@ public class UserInput : MonoBehaviour
 
         if (!selected.GetComponent<Selectable>().faceUp) // if the card clicked on is facedown
         {
-            
+
             if (!Blocked(selected)) // if the card clicked on is not blocked
             {
                 // flip it over
@@ -211,7 +213,7 @@ public class UserInput : MonoBehaviour
                 }
             }
         }
-        
+
     }
     void Top(GameObject selected)
     {
@@ -297,7 +299,7 @@ public class UserInput : MonoBehaviour
                         //selected.getcomponent<selectable>().faceup = true;
                         //slot1 = this.gameobject;
                         //debug.log("helloworld");
-                       
+
                         return true;
 
                     }
@@ -335,21 +337,21 @@ public class UserInput : MonoBehaviour
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = 0;
             solitaire.topPos[s1.row].GetComponent<Selectable>().suit = null;
             score -= 10;
-           
+
         }
         else if (s1.top) // keeps track of the current value of the top decks as a card has been removed
         {
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = s1.value - 1;
             //score -= 10;
-            if (solitaire.topPos[s1.row].GetComponent<Selectable>().value < s1.value) {score -= 15;}   
+            if (solitaire.topPos[s1.row].GetComponent<Selectable>().value < s1.value) { score -= 15; }
         }
         else // removes the card string from the appropriate bottom list
         {
             solitaire.bottoms[s1.row].Remove(slot1.name);
             slot1 = this.gameObject;
-           
 
-            
+
+
         }
 
         s1.inDeckPile = false; // you cannot add cards to the trips pile so this is always fine
@@ -380,7 +382,7 @@ public class UserInput : MonoBehaviour
         slot1 = this.gameObject;
 
     }
-   
+
     public bool Blocked(GameObject selected)
     {
         Selectable s2 = selected.GetComponent<Selectable>();
@@ -495,20 +497,13 @@ public class UserInput : MonoBehaviour
     {
         int Score = score;
         float second = time;
-        int Minute =minute;
-        /*     if ((Score == null || minute == null || second == null))
-             {
-                 Debug.Log("Invalid");
-                 return;
-             }*/
-        var userInfo = await HttpClientHelper.AddScore(new UserInfo(0,Score, Minute, second));
-        //scoreTxt.text = Score.ToString();
-        //scoreKeeper.minutetxt.text = minute.ToString();
-        //scoreKeeper.secondtxt.text = second.ToString();
+        int Minute = minute;
+      
+        var userInfo = await HttpClientHelper.AddScore(new UserInfo(0, Score, Minute, second));
+    
     }
-    public async void ShowHighScoreButton()
-    {
 
-    }
+
+
 
 }

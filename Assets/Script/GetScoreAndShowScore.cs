@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEditor.Compilation;
@@ -11,13 +12,16 @@ using UnityEngine;
 
 public class GetScoreAndShowScore : MonoBehaviour
 {
+
+
     public class HttpClientHelper
     {
-        private static readonly string WebApiUrl = "http://192.168.86.1/";
+        private static readonly string WebApiUrl = "http://192.168.1.26/";
 
         private static string UrlAddScore = WebApiUrl + "api/User/AddUser";
+        private static string UrlGetScore = WebApiUrl + "api/User/GetUser";
 
-        private static string medaiType = "application/json";
+        private static string mediaType = "application/json";
 
 
         public static async Task<bool> AddScore(UserInfo userInfo)
@@ -29,7 +33,7 @@ public class GetScoreAndShowScore : MonoBehaviour
                     return false;
                 }
                 var data = JsonConvert.SerializeObject(userInfo);
-                StringContent requestBody = new StringContent(data, Encoding.UTF8, medaiType);
+                StringContent requestBody = new StringContent(data, Encoding.UTF8, mediaType);
 
                 HttpClient httpClient = new HttpClient();
                 using var res = await httpClient.PostAsync(UrlAddScore, requestBody);
@@ -85,9 +89,37 @@ public class GetScoreAndShowScore : MonoBehaviour
             public int Minute { get; set; }
             public float Second { get; set; }
         }
+        public static async Task<List<UserInfo>> GetScore()
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
 
+                using var res = await client.GetAsync(UrlGetScore);
+                if (res.IsSuccessStatusCode)
+                {
+                    var content = await res.Content.ReadAsStringAsync();
+                    Debug.Log(content);
+                    if (!string.IsNullOrEmpty(content))
+                    {
+                        var data = JsonConvert.DeserializeObject<List<UserInfo>>(content);
+                        Debug.Log(data[0].ToString());
+                        return data;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex.Message);
+            }
+            return new List<UserInfo>();
+        }
 
 
 
     }
+
 }
+

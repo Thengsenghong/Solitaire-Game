@@ -5,10 +5,6 @@ using UnityEngine;
 public class RuleButton : MonoBehaviour
 {
 
-
-
-
-
     private void Start()
     {
         transform.localScale = Vector2.zero;

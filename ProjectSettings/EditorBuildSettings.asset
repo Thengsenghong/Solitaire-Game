@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Login Scene.unity
+    guid: cdc1dcc306ca5ef4cb0e70f11feaf14b
   m_configObjects: {}

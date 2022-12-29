@@ -80,6 +80,7 @@ public class Solitaire : MonoBehaviour
         if (deck.Count < 1)
         {
             /*   ReloadCard.SetActive(true);*/
+            ReloadCard.SetActive(false);
             deckButton.LeanColor(new Color32(2, 2, 2, 2), 0.1f);
             EmptyDeck.SetActive(true);
         }

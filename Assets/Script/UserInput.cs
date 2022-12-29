@@ -28,6 +28,9 @@ public class UserInput : MonoBehaviour
     public Text minutetxt, secondtxt;
     [SerializeField]
     private Text minutetxtEndScene, secondtxtEndScene;
+    private string name;
+
+  
 
 
 
@@ -36,6 +39,7 @@ public class UserInput : MonoBehaviour
     {
         solitaire = FindObjectOfType<Solitaire>();
         slot1 = this.gameObject;
+        name= PlayerPrefs.GetString("name");
     }
 
     // Update is called once per frame
@@ -495,11 +499,12 @@ public class UserInput : MonoBehaviour
     }
     public async void AddScoreButtonClick()
     {
+        string Name = name;
         int Score = score;
         float second = time;
         int Minute = minute;
       
-        var userInfo = await HttpClientHelper.AddScore(new UserInfo(0, Score, Minute, second));
+        var userInfo = await HttpClientHelper.AddScore(new UserInfo(0,Name, Score, Minute, second));
     
     }
 

@@ -12,12 +12,6 @@ public class LoadAndResetName : MonoBehaviour
     {
         NameBox.text = PlayerPrefs.GetString("name");
     }
-    public void ResetSavedGame()
-    {
-        PlayerPrefs.DeleteKey("name");
-        SceneManager.LoadScene("Login Scene");
-
-
-    }
+  
 
 }

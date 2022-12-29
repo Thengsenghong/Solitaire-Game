@@ -64,17 +64,11 @@ public class UIButtons : MonoBehaviour
         //  clear card form top
         ClearTopValues();
     }
-    public void GotoPlayScene()
-    {
-        SceneManager.LoadScene(1);
-    }
+   
     public void GotoHomeScene()
     {
         SceneManager.LoadScene(0);
     }
-    public void Exit()
-    {
-        Application.Quit();
-    }
+   
 
 }

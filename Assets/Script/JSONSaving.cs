@@ -1,9 +1,6 @@
-using System.Collections;
-using System.IO;
-using System.Collections.Generic;
+
 using UnityEngine;
 using static GetScoreAndShowScore;
-using Unity.VisualScripting.Antlr3.Runtime;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -13,27 +10,24 @@ public class JSONSaving : MonoBehaviour
     //private PlayerData playerData;
     /*  private string path = "";
       private string persistenPath = "";*/
-    public InputField name;
-    public RuleButton ruleButton;
+    private RuleButton ruleButton;
 
-    public void clickSaveButton()
-    {
-        PlayerPrefs.SetString("name", name.text);
-       string Name=PlayerPrefs.GetString("name");
-      
-        if(Name==null||Name=="")
-        {
-            Debug.Log("Null user name");
-        }
-        else if (Name!=null)
-        {
-            Debug.Log("Your name is "+ PlayerPrefs.GetString("name"));
-            SceneManager.LoadScene("Home Scene");
-        }
+    /* public InputField name;
+     public void clickSaveButton()
+     {
+         PlayerPrefs.SetString("name", name.text);
+         string Name = PlayerPrefs.GetString("name");
 
-
-
-    }
+         if (Name==null||Name=="")
+         {
+             Debug.Log("Null user name");
+         }
+         else if (Name!=null)
+         {
+             Debug.Log("Your name is "+ PlayerPrefs.GetString("name"));
+             SceneManager.LoadScene("Home Scene");
+         }
+     }*/
 
 
     /*  private void CreatePlayerData()
@@ -77,24 +71,56 @@ public class JSONSaving : MonoBehaviour
 
 
        }*/
+
+    public void ResetSavedGame()
+    {
+        PlayerPrefs.DeleteKey("name");
+        SceneManager.LoadScene("Login Scene");
+
+    }
     public Text txtScore;
     public Text txtMinute;
     public Text txtSecond;
+    public Text txtName;
     public async void ShowScoreButton()
     {
         var data = await HttpClientHelper.GetScore();
-        var (score, minute, second)=("", "", "");
-        if (data.Any())
+        var sorted = data.OrderByDescending(x => x.Score).ToList();
+
+        var (name, score, minute, second)=("", "", "", "");
+        if (sorted.Any())
         {
-            data.ForEach(x =>
+            /* sorted.ForEach(x =>                      //to get all row 
+             {
+                 name+=x.Name+"\n\n";
+                 score+=string.Format("{0:00}", x.Score)+"\n\n";
+                 minute+= string.Format("{0:000}", x.Minute+":")+"\n\n";
+                 second+= string.Format("{0:00}", x.Second)+"\n\n";
+             });*/
+
+
+            for (var i = 0; i<=9; i++)
             {
+                var x = sorted[i];
+                name+=x.Name+"\n\n";
                 score+=string.Format("{0:00}", x.Score)+"\n\n";
                 minute+= string.Format("{0:000}", x.Minute+":")+"\n\n";
                 second+= string.Format("{0:00}", x.Second)+"\n\n";
-            });
+            }
+
         }
+
+        txtName.text = name;
         txtScore.text= score;
         txtMinute.text= minute;
         txtSecond.text= second;
+    }
+    public void Exit()
+    {
+        Application.Quit();
+    }
+     public void GotoPlayScene()
+    {
+        SceneManager.LoadScene(1);
     }
 }

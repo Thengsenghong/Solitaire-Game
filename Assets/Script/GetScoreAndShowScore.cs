@@ -76,15 +76,17 @@ public class GetScoreAndShowScore : MonoBehaviour
         }
         public class UserInfo
         {
-            public UserInfo(int id = 0, int score = 0, int minute = 0, float second = 0)
+            public UserInfo(int id = 0, string name ="", int score = 0, int minute = 0, float second = 0)
             {
                 Id = id;
+                Name= name;
                 Score = score;
                 Minute = minute;
                 Second = second;
             }
 
             public int Id { get; set; }
+            public string Name { get; set; }
             public int Score { get; set; }
             public int Minute { get; set; }
             public float Second { get; set; }

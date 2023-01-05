@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using static GetScoreAndShowScore;
 using System.Linq;
@@ -10,7 +9,7 @@ public class JSONSaving : MonoBehaviour
     //private PlayerData playerData;
     /*  private string path = "";
       private string persistenPath = "";*/
-    private RuleButton ruleButton;
+    //private RuleButton ruleButton;
 
     /* public InputField name;
      public void clickSaveButton()

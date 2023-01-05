@@ -1,21 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
-using UnityEditor;
-using Unity.VisualScripting;
-using System.Net.Http;
 using static GetScoreAndShowScore;
 using static GetScoreAndShowScore.HttpClientHelper;
-using System.Threading.Tasks;
 
 
 public class UserInput : MonoBehaviour
 {
     public GameObject slot1;
     private Solitaire solitaire;
-    private ScoreKeeper scoreKeeper;
     private float timer;
     private float doubleClickTime = 0.3f;
     private int clickCount = 0;
@@ -24,13 +17,12 @@ public class UserInput : MonoBehaviour
     public int score = 0;
     public int minute = 0;
     public float time = 0;
-    [SerializeField]
     public Text minutetxt, secondtxt;
     [SerializeField]
     private Text minutetxtEndScene, secondtxtEndScene;
     private string name;
 
-  
+
 
 
 
@@ -39,7 +31,7 @@ public class UserInput : MonoBehaviour
     {
         solitaire = FindObjectOfType<Solitaire>();
         slot1 = this.gameObject;
-        name= PlayerPrefs.GetString("name");
+        name = PlayerPrefs.GetString("name");
     }
 
     // Update is called once per frame
@@ -366,15 +358,99 @@ public class UserInput : MonoBehaviour
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = s1.value;
             solitaire.topPos[s1.row].GetComponent<Selectable>().suit = s1.suit;
             s1.top = true;
-            score += 10;
-            if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
+      
+            if (minute < 3)
             {
-                score += 50;
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
+                {
+                    score += 50;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 5)
+                {
+                    score += 300;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
+                {
+                    score += 500;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
+                {
+                    score += 2500;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
+                {
+                    score += 5000;
+                }
             }
-            if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
+            else if (minute < 5)
             {
-                score += 500;
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
+                {
+                    score += 25;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 5)
+                {
+                    score += 150;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
+                {
+                    score += 500;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
+                {
+                    score += 1000; 
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
+                {
+                    score += 2500;
+                }
             }
+            else if (minute < 7)
+            {
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
+                {
+                    score += 20;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 5)
+                {
+                    score += 75;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
+                {
+                    score += 350;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
+                {
+                    score += 500;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
+                {
+                    score += 1000;
+                }
+            }
+            else
+            {
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
+                {
+                    score += 10;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 5)
+                {
+                    score += 25;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
+                {
+                    score += 100;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
+                {
+                    score += 250;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
+                {
+                    score += 500;
+                }
+            } 
 
         }
         else
@@ -503,9 +579,9 @@ public class UserInput : MonoBehaviour
         int Score = score;
         float second = time;
         int Minute = minute;
-      
-        var userInfo = await HttpClientHelper.AddScore(new UserInfo(0,Name, Score, Minute, second));
-    
+
+        var userInfo = await HttpClientHelper.AddScore(new UserInfo(0, Name, Score, Minute, second));
+
     }
 
 

@@ -361,94 +361,110 @@ public class UserInput : MonoBehaviour
       
             if (minute < 3)
             {
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
                 {
-                    score += 50;
+                    score += 5000;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
+                {
+                    score += 2500;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
+                {
+                    score += 500;
                 }
                 if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 5)
                 {
                     score += 300;
                 }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
                 {
-                    score += 500;
+                    score += 50;
                 }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
+                else
                 {
-                    score += 2500;
-                }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
-                {
-                    score += 5000;
+                    score+= 10;
                 }
             }
             else if (minute < 5)
             {
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
                 {
-                    score += 25;
-                }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 5)
-                {
-                    score += 150;
-                }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
-                {
-                    score += 500;
+                    score += 2500;
                 }
                 if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
                 {
                     score += 1000; 
                 }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
                 {
-                    score += 2500;
+                    score += 500;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 5)
+                {
+                    score += 150;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
+                {
+                    score += 25;
+                }
+                else
+                {
+                    score+= 10;
                 }
             }
             else if (minute < 7)
             {
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
                 {
-                    score += 20;
+                    score += 1000;
                 }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 5)
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
                 {
-                    score += 75;
+                    score += 500;
                 }
                 if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
                 {
                     score += 350;
                 }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 5)
                 {
-                    score += 500;
+                    score += 75;
                 }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
                 {
-                    score += 1000;
+                    score += 20;
+                }
+                else
+                {
+                    score += 10;
                 }
             }
             else
             {
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
                 {
-                    score += 10;
-                }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 5)
-                {
-                    score += 25;
-                }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
-                {
-                    score += 100;
+                    score += 500;
                 }
                 if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
                 {
                     score += 250;
                 }
-                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
                 {
-                    score += 500;
+                    score += 100;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 5)
+                {
+                    score += 25;
+                }
+                if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 3)
+                {
+                    score += 10;
+                }
+                else
+                {
+                    score += 10;
                 }
             } 
 

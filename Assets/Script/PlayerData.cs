@@ -8,6 +8,12 @@ using UnityEngine.UI;
 public class PlayerData:MonoBehaviour
 {
     public InputField name;
+    public Text welcome_Name;
+
+    private void Start()
+    {
+        welcome_Name.text=PlayerPrefs.GetString("name");
+    }
     public void clickSaveButton()
     {
         PlayerPrefs.SetString("name", name.text);
@@ -23,6 +29,8 @@ public class PlayerData:MonoBehaviour
             SceneManager.LoadScene("Home Scene");
         }
     }
+    
+
 
     /* public string name;
 

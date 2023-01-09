@@ -21,6 +21,8 @@ public class UserInput : MonoBehaviour
     [SerializeField]
     private Text minutetxtEndScene, secondtxtEndScene;
     private string nameGetfromPlayerPref;
+    public Selectable[] topStacks;
+    public GameObject highScorePanel;
 
 
 
@@ -37,6 +39,11 @@ public class UserInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (HasWon())
+        {
+            Win();
+            return;   //stop all function
+        }
         time += Time.deltaTime;
 
         if (time > 59)
@@ -69,6 +76,28 @@ public class UserInput : MonoBehaviour
         scoretxtAtEndScene.text = "SCORE " + score;
         GetMouseClick();
 
+    }
+    public bool HasWon()
+    {
+        int i = 0;
+        foreach (Selectable topstack in topStacks)
+        {
+            i += topstack.value;
+
+        }
+        if (i >= 52)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    void Win()
+    {
+        AudioManager.Instance.PlaySFX("Win");
+        highScorePanel.SetActive(true);
     }
 
     void GetMouseClick()

@@ -11,19 +11,19 @@ public class JSONSaving : MonoBehaviour
       private string persistenPath = "";*/
     //private RuleButton ruleButton;
 
-    /* public InputField name;
+    /* public InputField name1;
      public void clickSaveButton()
      {
-         PlayerPrefs.SetString("name", name.text);
-         string Name = PlayerPrefs.GetString("name");
+         PlayerPrefs.SetString("name1", name1.text);
+         string Name = PlayerPrefs.GetString("name1");
 
          if (Name==null||Name=="")
          {
-             Debug.Log("Null user name");
+             Debug.Log("Null user name1");
          }
          else if (Name!=null)
          {
-             Debug.Log("Your name is "+ PlayerPrefs.GetString("name"));
+             Debug.Log("Your name1 is "+ PlayerPrefs.GetString("name1"));
              SceneManager.LoadScene("Home Scene");
          }
      }*/
@@ -73,7 +73,7 @@ public class JSONSaving : MonoBehaviour
 
     public void ResetSavedGame()
     {
-        PlayerPrefs.DeleteKey("name");
+        PlayerPrefs.DeleteKey("name1");
         SceneManager.LoadScene("Login Scene");
 
     }
@@ -91,7 +91,7 @@ public class JSONSaving : MonoBehaviour
         {
             /* sorted.ForEach(x =>                      //to get all row 
              {
-                 name+=x.Name+"\n\n";
+                 name1+=x.Name+"\n\n";
                  score+=string.Format("{0:00}", x.Score)+"\n\n";
                  minute+= string.Format("{0:000}", x.Minute+":")+"\n\n";
                  second+= string.Format("{0:00}", x.Second)+"\n\n";

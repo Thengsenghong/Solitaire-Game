@@ -10,7 +10,7 @@ public class LoadAndResetName : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NameBox.text = PlayerPrefs.GetString("name");
+        NameBox.text = PlayerPrefs.GetString("name1");
     }
   
 

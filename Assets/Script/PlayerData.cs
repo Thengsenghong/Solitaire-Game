@@ -7,43 +7,38 @@ using UnityEngine.UI;
 
 public class PlayerData:MonoBehaviour
 {
-    public InputField name;
-    public Text welcome_Name;
-
-    private void Start()
-    {
-        welcome_Name.text=PlayerPrefs.GetString("name");
-    }
+    public InputField name1;
+ 
     public void clickSaveButton()
     {
-        PlayerPrefs.SetString("name", name.text);
-        string Name = PlayerPrefs.GetString("name");
+        PlayerPrefs.SetString("name1", name1.text);
+        string Name = PlayerPrefs.GetString("name1");
 
         if (Name==null||Name=="")
         {
-            Debug.Log("Null user name");
+            Debug.Log("Null user name1");
         }
         else if (Name!=null)
         {
-            Debug.Log("Your name is "+ PlayerPrefs.GetString("name"));
+            Debug.Log("Your name1 is "+ PlayerPrefs.GetString("name1"));
             SceneManager.LoadScene("Home Scene");
         }
     }
     
 
 
-    /* public string name;
+    /* public string name1;
 
 
-     public PlayerData(string name)
+     public PlayerData(string name1)
      {
-         this.name = name;
+         this.name1 = name1;
      }
 
 
      public override string ToString()
      {
-         return $"{name}";
+         return $"{name1}";
      }*/
 
 }

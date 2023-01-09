@@ -59,7 +59,9 @@ public class GetScoreAndShowScore : MonoBehaviour
 
         public class ResponseObject<T>
         {
-            public ErrorCode ErrorCode { get; set; }
+            private ErrorCode errorCode;
+
+            public ErrorCode ErrorCode { get => errorCode; set => errorCode=value; }
             public string Message { get; set; }
             public bool IsSuccess { get; set; }
             public T Data { get; set; }

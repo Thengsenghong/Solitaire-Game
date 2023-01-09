@@ -76,7 +76,7 @@ public class UpdateSprite : MonoBehaviour
                    
                     spriteRenderer.sprite = cardFace;
                 }
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.005f);
             }
         }
 

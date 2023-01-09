@@ -20,7 +20,7 @@ public class UserInput : MonoBehaviour
     public Text minutetxt, secondtxt;
     [SerializeField]
     private Text minutetxtEndScene, secondtxtEndScene;
-    private string name2;
+    private string nameGetfromPlayerPref;
 
 
 
@@ -31,7 +31,7 @@ public class UserInput : MonoBehaviour
     {
         solitaire = FindObjectOfType<Solitaire>();
         slot1 = this.gameObject;
-        name2 = PlayerPrefs.GetString("name1");
+        nameGetfromPlayerPref = PlayerPrefs.GetString("nameAddToPlayerPref");
     }
 
     // Update is called once per frame
@@ -129,7 +129,7 @@ public class UserInput : MonoBehaviour
                 // flip it over
                 selected.GetComponent<Selectable>().faceUp = true;
                 slot1 = this.gameObject;
-                Debug.Log("HelloWorld");
+              
             }
 
         }
@@ -591,7 +591,7 @@ public class UserInput : MonoBehaviour
     }
     public async void AddScoreButtonClick()
     {
-        string Name = name2;
+        string Name = nameGetfromPlayerPref;
         int Score = score;
         float second = time;
         int Minute = minute;

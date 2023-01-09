@@ -5,12 +5,11 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEditor.PackageManager;
 using UnityEngine;
+
 
 public class GetScoreAndShowScore : MonoBehaviour
 {
-
 
     public class HttpClientHelper
     {
@@ -56,12 +55,16 @@ public class GetScoreAndShowScore : MonoBehaviour
             }
             return false;
         }
+        public enum ErrorCode
+        {
+            Success =0,
+            Exception = 500,
+            InvalidRequest= 400
 
+        }
         public class ResponseObject<T>
         {
-            private ErrorCode errorCode;
-
-            public ErrorCode ErrorCode { get => errorCode; set => errorCode=value; }
+            public ErrorCode ErrorCode { get; set; }
             public string Message { get; set; }
             public bool IsSuccess { get; set; }
             public T Data { get; set; }
@@ -74,6 +77,7 @@ public class GetScoreAndShowScore : MonoBehaviour
                 Data = data;
             }
         }
+
         public class UserInfo
         {
             public UserInfo(int id = 0, string name ="", int score = 0, int minute = 0, float second = 0)

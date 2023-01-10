@@ -8,6 +8,10 @@ TagManager:
   - Top
   - Bottom
   - Card
+  - Board1
+  - Board2
+  - Board3
+  - Board4
   layers:
   - Default
   - TransparentFX

@@ -449,7 +449,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1183116251}
         m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
-        m_MethodName: clickSaveButton
+        m_MethodName: ClickSaveButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

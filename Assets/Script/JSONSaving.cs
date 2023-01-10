@@ -3,6 +3,7 @@ using static GetScoreAndShowScore;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class JSONSaving : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class JSONSaving : MonoBehaviour
     //private RuleButton ruleButton;
 
     /* public InputField nameAddToPlayerPref;
-     public void clickSaveButton()
+     public void ClickSaveButton()
      {
          PlayerPrefs.SetString("nameAddToPlayerPref", nameAddToPlayerPref.text);
          string Name = PlayerPrefs.GetString("nameAddToPlayerPref");
@@ -71,6 +72,8 @@ public class JSONSaving : MonoBehaviour
 
        }*/
 
+    
+ 
     public void ResetSavedGame()
     {
         PlayerPrefs.DeleteKey("nameAddToPlayerPref");
@@ -122,4 +125,5 @@ public class JSONSaving : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
 }

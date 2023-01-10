@@ -23,7 +23,8 @@ public class UserInput : MonoBehaviour
     private string nameGetfromPlayerPref;
     public Selectable[] topStacks;
     public GameObject highScorePanel;
-
+    public GameObject Board1, Board2, Board3, Board4;
+    private string getboard1, getboard2, getboard3, getboard4;
 
 
 
@@ -31,6 +32,7 @@ public class UserInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        getBoard();
         solitaire = FindObjectOfType<Solitaire>();
         slot1 = this.gameObject;
         nameGetfromPlayerPref = PlayerPrefs.GetString("nameAddToPlayerPref");
@@ -94,8 +96,48 @@ public class UserInput : MonoBehaviour
             return false;
         }
     }
+    private void getBoard()
+    {
+        getboard1 = PlayerPrefs.GetString("board1");
+        getboard2 = PlayerPrefs.GetString("board2");
+        getboard3 = PlayerPrefs.GetString("board3");
+        getboard4 = PlayerPrefs.GetString("board4");
+
+        Debug.Log($"{getboard1},{getboard2},{getboard3},{getboard4}");
+
+        if (getboard1=="clicked")
+        {
+            Board1.SetActive(true);
+            Board2.SetActive(false);
+            Board3.SetActive(false);
+            Board4.SetActive(false);
+        }else
+        if (getboard2=="clicked")
+        {
+            Board2.SetActive(true);
+            Board1.SetActive(false);
+            Board3.SetActive(false);
+            Board4.SetActive(false);
+        }else
+        if (getboard3 == "clicked")
+        {
+            Board3.SetActive(true);
+            Board1.SetActive(false);
+            Board2.SetActive(false);
+            Board4.SetActive(false);
+
+        }else
+        if (getboard4 == "clicked")
+        {
+            Board4.SetActive(true);
+            Board1.SetActive(false);
+            Board2.SetActive(false);
+            Board3.SetActive(false);
+        }
+    }
     void Win()
     {
+        
         AudioManager.Instance.PlaySFX("Win");
         highScorePanel.SetActive(true);
     }

@@ -44,30 +44,32 @@ public class UIController : MonoBehaviour
     public void GetMusicAndSFXButton()
     {
         musicStr=PlayerPrefs.GetString("Music");
-        muteMusicStr =PlayerPrefs.GetString("MuteMusic");
-        sfxStr= PlayerPrefs.GetString("SFX");
-        mutesfxStr=PlayerPrefs.GetString("MuteSFX");
         if (musicStr == "clicked")
         {
             music.SetActive(false);
             muteMusic.SetActive(true);
+            ToggleMusic();
         }
+        muteMusicStr =PlayerPrefs.GetString("MuteMusic");
          if (muteMusicStr == "clicked")
         {
             music.SetActive(true);
             muteMusic.SetActive(false);
+            
 
         }
+        sfxStr= PlayerPrefs.GetString("SFX");
         if (sfxStr=="clicked")
         {
             sfx.SetActive(false);
             mutesfx.SetActive(true);
+            ToggleSFX();
         }
+        mutesfxStr=PlayerPrefs.GetString("MuteSFX");
          if (mutesfxStr == "clicked")
         {
             sfx.SetActive(true);
             mutesfx.SetActive(false);
-
         }
 
     }

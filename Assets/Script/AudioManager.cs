@@ -52,7 +52,7 @@ public class AudioManager : MonoBehaviour
 
     public void ToggleMusic()
     {
-        musicSource.mute =  !musicSource.mute;
+        musicSource.mute = true;
     }
     public void playMusic()
     {
@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour
 
     public void ToggleSFX()
     {
-        sfxSource.mute = !sfxSource.mute;
+        sfxSource.mute = true;
     }
     public void playSFX()
     {

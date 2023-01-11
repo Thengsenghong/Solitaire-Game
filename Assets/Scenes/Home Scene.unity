@@ -3553,7 +3553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.58431375, g: 0.60784316, b: 0.7294118, a: 0.19215687}
+  m_Color: {r: 0.58431375, g: 0.60784316, b: 0.7294118, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4164,7 +4164,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1885123649}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: ToggleSFX
+        m_MethodName: PlaySFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6607,8 +6607,8 @@ MonoBehaviour:
   _musicSlider: {fileID: 750213826}
   _sfxSlider: {fileID: 936068074}
   music: {fileID: 148965077}
-  sfx: {fileID: 1997568880}
-  muteMusic: {fileID: 1293704659}
+  sfx: {fileID: 1293704659}
+  muteMusic: {fileID: 1997568880}
   mutesfx: {fileID: 1114090810}
 --- !u!1 &1943559775
 GameObject:
@@ -7192,7 +7192,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1885123649}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: ToggleMusic
+        m_MethodName: PlayMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

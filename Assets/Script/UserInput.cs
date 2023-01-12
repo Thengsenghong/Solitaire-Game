@@ -321,6 +321,7 @@ public class UserInput : MonoBehaviour
         Selectable s1 = slot1.GetComponent<Selectable>();
         Selectable s2 = selected.GetComponent<Selectable>();
         // compare them to see if they stack  
+        
         if (!s2.inDeckPile)
         {
             if (s2.top) // if in the top pile must stack suited Ace to King
@@ -410,7 +411,115 @@ public class UserInput : MonoBehaviour
         {
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = s1.value - 1;
             //score -= 10;
-            if (solitaire.topPos[s1.row].GetComponent<Selectable>().value < s1.value) { score -= 15; }
+            /*if (solitaire.topPos[s1.row].GetComponent<Selectable>().value < s1.value) { score -= 15; }*/
+            if (minute < 3)
+            {
+                if (s1.value > 12)
+                {
+                    score -= 5500;
+                }
+                if (s1.value > 10)
+                {
+                    score -= 2700;
+                }
+                if (s1.value > 7)
+                {
+                    score -= 550;
+                }
+                if (s1.value > 5)
+                {
+                    score -= 330;
+                }
+                if (s1.value > 3)
+                {
+                    score -= 60;
+                }
+                else
+                {
+                    score -= 15;
+                }
+            }
+            else if (minute < 5)
+            {
+                if (s1.value > 12)
+                {
+                    score -= 2700;
+                }
+                if (s1.value > 10)
+                {
+                    score -= 1200;
+                }
+                if (s1.value > 7)
+                {
+                    score -= 540;
+                }
+                if (s1.value > 5)
+                {
+                    score -= 160;
+                }
+                if (s1.value > 3)
+                {
+                    score -= 30;
+                }
+                else
+                {
+                    score -= 15;
+                }
+            }
+            else if (minute < 7)
+            {
+                if (s1.value > 12)
+                {
+                    score -= 1100;
+                }
+                if (s1.value > 10)
+                {
+                    score -= 520;
+                }
+                if (s1.value > 7)
+                {
+                    score -= 360;
+                }
+                if (s1.value > 5)
+                {
+                    score -= 85;
+                }
+                if (s1.value > 3)
+                {
+                    score -= 25;
+                }
+                else
+                {
+                    score -= 15;
+                }
+            }
+            else
+            {
+                if (s1.value > 12)
+                {
+                    score -= 520;
+                }
+                if (s1.value > 10)
+                {
+                    score -= 260;
+                }
+                if (s1.value > 7)
+                {
+                    score -= 110;
+                }
+                if (s1.value > 5)
+                {
+                    score -= 30;
+                }
+                if (s1.value > 3)
+                {
+                    score -= 15;
+                }
+                else
+                {
+                    score -= 15;
+                }
+            }
         }
         else // removes the card string from the appropriate bottom list
         {

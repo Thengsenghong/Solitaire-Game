@@ -1275,7 +1275,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: REGISTER OR RESET NAME
+  m_Text: RESET NAME
 --- !u!222 &304474378
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3224,7 +3224,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 41d3721fd6cfc3b45a737c03507a9ea8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -5083,9 +5083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acffc8e0b740024db12dd4765868a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSounds:
-  - name: Theme
-    clip: {fileID: 8300000, guid: 41d3721fd6cfc3b45a737c03507a9ea8, type: 3}
+  musicSounds: []
   sfxSounds:
   - name: Shuffle
     clip: {fileID: 8300000, guid: a00924ebff7153f44a979c77de1d52c0, type: 3}
@@ -6648,7 +6646,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -51.6}
-  m_SizeDelta: {x: 499.57, y: 47.44}
+  m_SizeDelta: {x: 282.55, y: 47.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1943559777
 MonoBehaviour:

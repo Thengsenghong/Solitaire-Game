@@ -3,7 +3,6 @@ using static GetScoreAndShowScore;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 public class JSONSaving : MonoBehaviour
 {
@@ -71,12 +70,22 @@ public class JSONSaving : MonoBehaviour
 
 
        }*/
+    private string checkName;
+    private void Start()
+    {
+        checkName=PlayerPrefs.GetString("nameAddToPlayerPref");
+        if (checkName=="" || checkName==null)
+        { SceneManager.LoadScene("Login Scene"); }
+        else
+        {
+            Debug.Log($"Hello{checkName}");
+        }
+    }
 
-    
- 
     public void ResetSavedGame()
     {
         PlayerPrefs.DeleteKey("nameAddToPlayerPref");
+        PlayerPrefs.SetString("checkName", "null");
         SceneManager.LoadScene("Login Scene");
 
     }
@@ -121,7 +130,7 @@ public class JSONSaving : MonoBehaviour
     {
         Application.Quit();
     }
-     public void GotoPlayScene()
+    public void GotoPlayScene()
     {
         SceneManager.LoadScene(1);
     }

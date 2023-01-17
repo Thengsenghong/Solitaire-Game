@@ -44,6 +44,7 @@ public class UserInput : MonoBehaviour
         if (HasWon())
         {
             Win();
+            /*AudioManager.Instance.PlaySFX("Win");*/
             return;   //stop all function
         }
         time += Time.deltaTime;
@@ -87,7 +88,7 @@ public class UserInput : MonoBehaviour
             i += topstack.value;
 
         }
-        if (i >= 52)
+        if (i >= 2)
         {
             return true;
         }
@@ -138,8 +139,9 @@ public class UserInput : MonoBehaviour
     void Win()
     {
         
-        AudioManager.Instance.PlaySFX("Win");
+        
         highScorePanel.SetActive(true);
+       
     }
 
     void GetMouseClick()

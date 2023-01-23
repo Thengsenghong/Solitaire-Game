@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -42,6 +42,8 @@ public class Solitaire : MonoBehaviour
     private int deckLocation;
     private int trips;             //card random
     private int tripsRemainder;   //card random ramainder
+    public Selectable selectable;
+    public UserInput userInput;
 
 
 
@@ -57,6 +59,13 @@ public class Solitaire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (deck.Count==0&&tripsOnDisplay.Count==0&&discardPile.Count==0)
+        {
+            if (selectable.faceUp==true)
+            {
+                
+            }
+        }
     /*    if (deck.Count == 1 && discardPile.Count == 0)
         {
             Debug.Log("hahahah");

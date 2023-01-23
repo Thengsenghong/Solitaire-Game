@@ -88,7 +88,7 @@ public class UserInput : MonoBehaviour
             i += topstack.value;
 
         }
-        if (i >= 2)
+        if (i >= 52)
         {
             return true;
         }
@@ -112,14 +112,16 @@ public class UserInput : MonoBehaviour
             Board2.SetActive(false);
             Board3.SetActive(false);
             Board4.SetActive(false);
-        }else
+        }
+        else
         if (getboard2=="clicked")
         {
             Board2.SetActive(true);
             Board1.SetActive(false);
             Board3.SetActive(false);
             Board4.SetActive(false);
-        }else
+        }
+        else
         if (getboard3 == "clicked")
         {
             Board3.SetActive(true);
@@ -127,7 +129,8 @@ public class UserInput : MonoBehaviour
             Board2.SetActive(false);
             Board4.SetActive(false);
 
-        }else
+        }
+        else
         if (getboard4 == "clicked")
         {
             Board4.SetActive(true);
@@ -138,10 +141,10 @@ public class UserInput : MonoBehaviour
     }
     void Win()
     {
-        
-        
+
+
         highScorePanel.SetActive(true);
-       
+
     }
 
     void GetMouseClick()
@@ -202,7 +205,7 @@ public class UserInput : MonoBehaviour
                 // flip it over
                 selected.GetComponent<Selectable>().faceUp = true;
                 slot1 = this.gameObject;
-              
+
             }
 
         }
@@ -323,7 +326,7 @@ public class UserInput : MonoBehaviour
         Selectable s1 = slot1.GetComponent<Selectable>();
         Selectable s2 = selected.GetComponent<Selectable>();
         // compare them to see if they stack  
-        
+
         if (!s2.inDeckPile)
         {
             if (s2.top) // if in the top pile must stack suited Ace to King
@@ -342,6 +345,8 @@ public class UserInput : MonoBehaviour
             }
             else  // if in the bottom pile must stack alternate colours King to Ace
             {
+                /*    if ( s1.name == solitaire.tripsOnDisplay.Last()) 
+                    {*/
                 if (s1.value == s2.value - 1)
                 {
                     bool card1Red = true;
@@ -357,21 +362,17 @@ public class UserInput : MonoBehaviour
                         card2Red = false;
                     }
 
+
                     if (card1Red == card2Red)
                     {
+
                         print("Not stackable");
                         return false;
                     }
                     else
                     {
                         print("Stackable");
-                        //audiomanager.instance.playsfx("open");
-                        //selected.getcomponent<selectable>().faceup = true;
-                        //slot1 = this.gameobject;
-                        //debug.log("helloworld");
-
                         return true;
-
                     }
                 }
             }
@@ -540,7 +541,7 @@ public class UserInput : MonoBehaviour
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = s1.value;
             solitaire.topPos[s1.row].GetComponent<Selectable>().suit = s1.suit;
             s1.top = true;
-      
+
             if (minute < 3)
             {
                 if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
@@ -576,7 +577,7 @@ public class UserInput : MonoBehaviour
                 }
                 if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 10)
                 {
-                    score += 1000; 
+                    score += 1000;
                 }
                 if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 7)
                 {
@@ -648,7 +649,7 @@ public class UserInput : MonoBehaviour
                 {
                     score += 10;
                 }
-            } 
+            }
 
         }
         else
@@ -688,7 +689,33 @@ public class UserInput : MonoBehaviour
             }
         }
     }
-
+    public bool IsBlocked(Selectable selected)
+    {
+        Selectable s2 = selected.GetComponent<Selectable>();
+        if (s2.inDeckPile == true)
+        {
+            if (s2.name == solitaire.tripsOnDisplay.Last()) // if it is the last trip it is not blocked
+            {
+                return false;
+            }
+            else
+            {
+                print(s2.name + " is blocked by " + solitaire.tripsOnDisplay.Last());
+                return true;
+            }
+        }
+        else
+        {
+            if (s2.name == solitaire.bottoms[s2.row].Last()) // check if it is the bottom card
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
     bool DoubleClick()
     {
         if (timer < doubleClickTime && clickCount == 2)

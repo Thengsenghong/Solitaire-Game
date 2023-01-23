@@ -11,6 +11,7 @@ public class PosCardUP : MonoBehaviour
   
     void Update()
     {
+
         card.Clear();
 
         foreach (Transform item in GlupCard.transform)

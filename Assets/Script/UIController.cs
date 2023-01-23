@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,7 +34,7 @@ public class UIController : MonoBehaviour
     {
         AudioManager.Instance.SFXVolume(_sfxSlider.value);
     }
-
+    #region Sound button
     public GameObject music, sfx, muteMusic, mutesfx;
     private string musicStr, sfxStr, muteMusicStr, mutesfxStr;
     public void GetMusicAndSFXButton()
@@ -98,5 +97,5 @@ public class UIController : MonoBehaviour
         PlayerPrefs.SetString("MuteSFX", "clicked");
 
     }
-
+    #endregion end sound button
 }

@@ -341,6 +341,7 @@ public class UserInput : MonoBehaviour
                     if (s1.value == s2.value + 1)
                     {
                         move+=1;
+                        //AudioManager.Instance.PlaySFX("Open");
                         return true;
                     }
                 }
@@ -379,6 +380,7 @@ public class UserInput : MonoBehaviour
                     {
                         print("Stackable");
                         move+=1;
+                        //AudioManager.Instance.PlaySFX("Open");
                         return true;
                     }
                 }

@@ -78,7 +78,7 @@ public class JSONSaving : MonoBehaviour
         { SceneManager.LoadScene("Login Scene"); }
         else
         {
-            Debug.Log($"Hello{checkName}");
+            Debug.Log($"Hello :{checkName}");
         }
     }
 
@@ -90,6 +90,7 @@ public class JSONSaving : MonoBehaviour
 
     }
     public Text txtScore;
+    public Text txtMove;
     public Text txtMinute;
     public Text txtSecond;
     public Text txtName;
@@ -98,7 +99,7 @@ public class JSONSaving : MonoBehaviour
         var data = await HttpClientHelper.GetScore();
         var sorted = data.OrderByDescending(x => x.Score).ToList();
 
-        var (name, score, minute, second)=("", "", "", "");
+        var (name, score, move, minute, second)=("", "", "", "","");
         if (sorted.Any())
         {
             /* sorted.ForEach(x =>                      //to get all row 
@@ -115,6 +116,7 @@ public class JSONSaving : MonoBehaviour
                 var x = sorted[i];
                 name+=x.Name+"\n\n";
                 score+=string.Format("{0:00}", x.Score)+"\n\n";
+                move+=string.Format("{0:00}", x.Move)+"\n\n";
                 minute+= string.Format("{0:000}", x.Minute+":")+"\n\n";
                 second+= string.Format("{0:00}", x.Second)+"\n\n";
             }
@@ -123,6 +125,7 @@ public class JSONSaving : MonoBehaviour
 
         txtName.text = name;
         txtScore.text= score;
+        txtMove.text= move;
         txtMinute.text= minute;
         txtSecond.text= second;
     }

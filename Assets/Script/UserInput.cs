@@ -13,8 +13,11 @@ public class UserInput : MonoBehaviour
     private float doubleClickTime = 0.3f;
     private int clickCount = 0;
     public Text scoreTxt;
+    public Text movetxt;
+    public Text movetxtAtEndScene;
     public Text scoretxtAtEndScene;
     public int score = 0;
+    public int move = 0;
     public int minute = 0;
     public float time = 0;
     public Text minutetxt, secondtxt;
@@ -77,6 +80,8 @@ public class UserInput : MonoBehaviour
         if (score < 0) score = 0;
         scoreTxt.text = "SCORE= " + score;     // scoring
         scoretxtAtEndScene.text = "SCORE " + score;
+        movetxt.text = "MOVE= "+ move;
+        movetxtAtEndScene.text = "MOVE " + move; 
         GetMouseClick();
 
     }
@@ -335,6 +340,7 @@ public class UserInput : MonoBehaviour
                 {
                     if (s1.value == s2.value + 1)
                     {
+                        move+=1;
                         return true;
                     }
                 }
@@ -372,6 +378,7 @@ public class UserInput : MonoBehaviour
                     else
                     {
                         print("Stackable");
+                        move+=1;
                         return true;
                     }
                 }
@@ -415,6 +422,7 @@ public class UserInput : MonoBehaviour
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = s1.value - 1;
             //score -= 10;
             /*if (solitaire.topPos[s1.row].GetComponent<Selectable>().value < s1.value) { score -= 15; }*/
+      
             if (minute < 3)
             {
                 if (s1.value > 12)
@@ -523,6 +531,7 @@ public class UserInput : MonoBehaviour
                     score -= 15;
                 }
             }
+           
         }
         else // removes the card string from the appropriate bottom list
         {
@@ -541,7 +550,7 @@ public class UserInput : MonoBehaviour
             solitaire.topPos[s1.row].GetComponent<Selectable>().value = s1.value;
             solitaire.topPos[s1.row].GetComponent<Selectable>().suit = s1.suit;
             s1.top = true;
-
+            move+=1;
             if (minute < 3)
             {
                 if (solitaire.topPos[s1.row].GetComponent<Selectable>().value > 12)
@@ -802,10 +811,11 @@ public class UserInput : MonoBehaviour
     {
         string Name = nameGetfromPlayerPref;
         int Score = score;
+        int Move = move;
         float second = time;
         int Minute = minute;
 
-        var userInfo = await HttpClientHelper.AddScore(new UserInfo(0, Name, Score, Minute, second));
+        var userInfo = await HttpClientHelper.AddScore(new UserInfo(0, Name, Score, Move, Minute, second));
 
     }
 

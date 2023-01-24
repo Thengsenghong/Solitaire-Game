@@ -13,7 +13,7 @@ public class GetScoreAndShowScore : MonoBehaviour
 
     public class HttpClientHelper
     {
-        private static readonly string WebApiUrl = "http://192.168.1.26/";
+        private static readonly string WebApiUrl = "http://192.168.1.24/";
 
         private static string UrlAddScore = WebApiUrl + "api/User/AddUser";
         private static string UrlGetScore = WebApiUrl + "api/User/GetUser";
@@ -80,18 +80,20 @@ public class GetScoreAndShowScore : MonoBehaviour
 
         public class UserInfo
         {
-            public UserInfo(int id = 0, string name ="", int score = 0, int minute = 0, float second = 0)
+            public UserInfo(int id = 0, string name ="", int score = 0, int move = 0, int minute = 0, float second = 0)
             {
                 Id = id;
                 Name= name;
                 Score = score;
                 Minute = minute;
                 Second = second;
+                Move=move;
             }
 
             public int Id { get; set; }
             public string Name { get; set; }
             public int Score { get; set; }
+            public int Move { get; set; }
             public int Minute { get; set; }
             public float Second { get; set; }
         }
